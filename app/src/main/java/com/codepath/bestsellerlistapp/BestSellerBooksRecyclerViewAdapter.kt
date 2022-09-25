@@ -1,10 +1,16 @@
 package com.codepath.bestsellerlistapp
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.codepath.bestsellerlistapp.R.id
 
 /**
@@ -31,6 +37,11 @@ class BestSellerBooksRecyclerViewAdapter(
         var mItem: BestSellerBook? = null
         val mBookTitle: TextView = mView.findViewById<View>(id.book_title) as TextView
         val mBookAuthor: TextView = mView.findViewById<View>(id.book_author) as TextView
+        val mBooKImage: ImageView = mView.findViewById<View>(id.book_image) as ImageView
+        val mRanking: TextView = mView.findViewById<View>(id.ranking) as TextView
+        val mDescription: TextView = mView.findViewById<View>(id.book_description) as TextView
+        val mButton: Button = mView.findViewById<View>(id.buy_button) as Button
+
 
         override fun toString(): String {
             return mBookTitle.toString() + " '" + mBookAuthor.text + "'"
@@ -43,11 +54,25 @@ class BestSellerBooksRecyclerViewAdapter(
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
         val book = books[position]
 
+
+
         holder.mItem = book
         holder.mBookTitle.text = book.title
         holder.mBookAuthor.text = book.author
+        holder.mRanking.text = book.rank.toString()
+        holder.mDescription.text = book.description
+        Glide.with(holder.mView)
+            .load(book.bookImageUrl)
+            .centerInside()
+            .into(holder.mBooKImage)
+
+        holder.mButton.setOnClickListener {
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(book.amazonUrl))
+            startActivity(it.context, browserIntent, null)
+        }
 
         holder.mView.setOnClickListener {
+
             holder.mItem?.let { book ->
                 mListener?.onItemClick(book)
             }
