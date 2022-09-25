@@ -32,7 +32,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![wordlewalkthru.gif](https://github.com/yunsanch/wordle/blob/master/WorldleWalkthru.gif)
+![BestSellerListwalkthru.gif](https://github.com/yunsanchBestsellerListApp/blob/main/BestSellerListAppWalkthru.gif)
 
 
 <!-- Replace this with whatever GIF tool you used! -->
