@@ -2,7 +2,7 @@
 
 Submitted by: **Yunior Sanchez**
 
-**LAB3** is an android app that recreates a simple version of the popular word game [Wordle](https://www.nytimes.com/games/wordle/index.html). 
+**LAB3** is an android app that recreates a simple version of the most popular books using nytimes api. 
 
 Time spent: **1** days spent in total
 
@@ -32,7 +32,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![BestSellerListwalkthru.gif](https://github.com/yunsanchBestsellerListApp/blob/main/BestSellerListAppWalkthru.gif)
+![BestSellerListwalkthru.gif](https://github.com/yunsanch/BestsellerListApp/blob/main/BestSellerListAppWalkthru.gif)
 
 
 <!-- Replace this with whatever GIF tool you used! -->
